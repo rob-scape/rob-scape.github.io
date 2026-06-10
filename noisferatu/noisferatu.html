@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noisferatu</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .button-bar { display: flex; gap: 0.75rem; margin-bottom: 2.5rem; flex-wrap: wrap; justify-content: center; }
+    .btn { display: inline-block; text-decoration: none; color: #000000; background: #ededed; border: 0.5px solid #cccccc; border-radius: 10px; padding: 0.5rem 1.25rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.15s, border-color 0.15s, background 0.15s, transform 0.15s; }
+    .btn:hover { color: #000000; border-color: #999; background: #d9d9d9; transform: scale(0.98); }
+
+    .instrument-photo { width: 100%; max-width: 700px; display: block; margin: 0 auto 3rem; }
+
+    .instrument-title { font-size: 1.6rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; max-width: 680px; margin: 0 auto 0.5rem; text-align: center;}
+    .instrument-tagline { font-size: 0.9rem; color: #888; letter-spacing: 0.1em; max-width: 680px; margin: 0 auto 2rem; text-align: center;}
+
+    .description { max-width: 680px; font-size: 0.92rem; line-height: 1.8; color: #bbb; margin: 0 auto 1.2rem; }
+    .description p { margin-bottom: 1rem; }
+
+    .banks { max-width: 680px; margin: 0 auto 2rem; }
+    .banks-title { font-size: 0.72rem; letter-spacing: 0.2em; color: #bbb; margin-bottom: 1.5rem; cursor: pointer; user-select: none; }
+    .bank { padding: 0.5rem 0; }
+.bank-name { font-size: 0.92rem; color: #e0e0e0; margin-bottom: 0.2rem; }
+.bank-desc { font-size: 0.92rem; color: #e0e0e0; line-height: 1.8; }
+
+    .for-coders { max-width: 680px; padding-top: 2rem; border-top: 0.5px solid #1e1e1e; margin: 0 auto 4rem;}
+    .for-coders-title { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #999; margin-bottom: 1rem; }
+    .for-coders p { font-size: 0.92rem; color: #bbb; line-height: 1.8; }
+    .for-coders a { color: #e0e0e0; text-decoration: none; border-bottom: 1px solid #6b0000; transition: color 0.2s, border-color 0.2s; }
+    .for-coders a:hover { color: #ffffff; border-color: #cc0000; }
+
+        .banks-toggle { border: none; background: none; }
+        .banks-toggle summary { cursor: pointer; list-style: none; user-select: none; }
+        .banks-toggle summary::-webkit-details-marker { display: none; }
+        .banks-toggle summary::after { content: ' +'; color: #bbb; }
+        details[open] > summary::after { content: ' −'; color: #bbb; }
+
+    @media (max-width: 700px) {
+      .bank { flex-direction: column; gap: 0.4rem; }
+      .bank-name { min-width: unset; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="site-wrapper">
+  <div id="site-header"></div>
+  <div id="site-socials"></div>
+  <div class="divider"></div>
+
+  <script>const BASE = '../';</script>
+  <script src="../assets/header.js"></script>
+  <script src="../assets/socials.js"></script>
+
+  <main>
+
+    <h1 class="instrument-title">Noisferatu</h1>
+    <p class="instrument-tagline">Infinite textures and digital mayhem</p>
+
+    <div class="button-bar">
+      <a href="https://robertheel.com/content/noisferatu/noisferatu_manual.pdf" class="btn" target="_blank" rel="noopener noreferrer">manual</a>
+      <a href="https://robertheel.com/content/noisferatu/noisferatu_buildguide.pdf" class="btn" target="_blank" rel="noopener noreferrer">build guide</a>
+      <a href="https://github.com/rob-scape/noisferatu" class="btn" target="_blank" rel="noopener noreferrer">github</a>
+    </div>
+
+    <img class="instrument-photo" src="Noisferatu.webp" alt="Noisferatu">
+
+   <div class="description">
+  <p>NOISFERATU is a compact handheld generative texture synthesizer. 45 algorithms across 5 banks produce crackling textures, noisy scapes, evolving drones, harmonic blips and digital chaos. Shaped but never fully controlled by four knobs.</p>
+  <p>They generate endlessly evolving textures, tones and rhythmic patterns. Designed to surprise, resist repetition and never quite settle. Dial in a crackling drone, a stuttering melody, or pure digital chaos.</p>
+  <p>The front and back panel can be flipped.</p>
+  <p>It uses and abuses creative approaches like generative wavetables, BitBend address manipulation, probability gates, bitwise logic operations and wild combinations of these.</p>
+      <p>Powered via USB-C.</p>
+      <p>Firmware and schematics are released open source.</p>
+    </div>
+
+  <div class="banks">
+    <details class="banks-toggle">
+      <summary class="banks-title">Banks Overview</summary>
+
+      <div class="bank">
+        <div class="bank-name">Bank 1 — Wavetables</div>
+        <div class="bank-desc">Glitchy bursts and evolving soundscapes. From sparse crackles to dense digital chaos.</div>
+      </div>
+      <div class="bank">
+        <div class="bank-name">Bank 2 — Noisy Textures</div>
+        <div class="bank-desc">Noise, dust and rhythmic grain. From windy hiss to clicks, crackles and bursts.</div>
+      </div>
+      <div class="bank">
+        <div class="bank-name">Bank 3 — BitBend</div>
+        <div class="bank-desc">Warped, stuttering and unpredictable. Always shifting, never settling.</div>
+      </div>
+      <div class="bank">
+        <div class="bank-name">Bank 4 — Blips & Tones</div>
+        <div class="bank-desc">Melodies, chords and rhythmic blips. The most tonal bank.</div>
+      </div>
+      <div class="bank">
+        <div class="bank-name">Bank 5 — Logic Disorder</div>
+        <div class="bank-desc">Two oscillators fighting each other. Pure digital mayhem.</div>
+      </div>
+
+    </details>
+  </div>
+
+    <div class="for-coders">
+  <a href="https://robertheel.com/content/noisferatu/noisferatu_manual.pdf" target="_blank">Manual</a><br><br>
+  <a href="https://robertheel.com/content/noisferatu/noisferatu_buildguide.pdf" target="_blank">Build guide</a><br><br>
+  <p>The <a href="https://github.com/rob-scape/noisferatu" target="_blank">GitHub repo</a> covers everything in depth.</p>
+</div>
+
+
+  </main>
+  <footer>
+    <p>© 2026 Robert Heel · <a href="../imprint.html">imprint</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

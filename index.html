@@ -1,9 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>one</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scaepe - sonic explorations by Robert Heel</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 1rem 0 4rem; }
+  .instrument-card { display: block; text-decoration: none; color: inherit; }
+  .instrument-card img { width: 100%; aspect-ratio: 850/515; object-fit: contain; background: #161616; display: block; transition: opacity 0.25s; }
+  .instrument-card:hover img { opacity: 0.8; }
+  .instrument-card .card-label { margin-top: 0.7rem; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: #888; text-align: center; }
+  .instrument-card:hover .card-label { color: #e0e0e0; }
+  @media (max-width: 700px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+
 </head>
-<body style="background-color: hotpink; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
-  <h1 style="color: white; font-family: sans-serif;"> ! 🎉</h1>
-</body>
+<body>
+
+<div class="site-wrapper">
+  <div id="site-header"></div>
+  <div id="site-socials"></div>
+  <div class="divider"></div>
+
+  <script>const BASE = '';</script>
+  <script src="assets/header.js"></script>
+  <script src="assets/socials.js"></script>
+
+  <main class="grid">
+
+    <a href="noisferatu/noisferatu.html" class="instrument-card">
+      <img src="noisferatu/Noisferatu_freigestellt_01.png" alt="Noisferatu">
+      <div class="card-label">Noisferatu</div>
+    </a>
+
+    <!-- add more instruments here, same structure:
+    <a href="nextinstrument/nextinstrument.html" class="instrument-card">
+      <img src="nextinstrument/nextinstrument_photo.jpg" alt="Next Instrument">
+      <div class="card-label">Next Instrument</div>
+    </a>
+    -->
+
+  </main>
+  <footer>
+    <p>© 2026 Robert Heel · <a href="imprint.html">imprint</a></p>
+  </footer>
+
+</div>
 </html>
