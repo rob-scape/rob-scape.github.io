@@ -36,6 +36,46 @@
         .banks-toggle summary::after { content: ' +'; color: #bbb; }
         details[open] > summary::after { content: ' −'; color: #bbb; }
 
+        .video-section {
+        max-width: 680px;
+        margin: 0 auto 4rem;
+        padding-top: 2rem;
+        border-top: 0.5px solid #1e1e1e;
+      }
+      .video-section iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border: none;
+        display: block;
+      }
+
+      .image-switcher {
+        max-width: 680px;
+        margin: 0 auto 3rem;
+      }
+      .switcher-main {
+        width: 100%;
+        display: block;
+      }
+      .switcher-thumbs {
+        display: flex;
+          justify-content: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+      .thumb {
+        width: 80px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 0.2s;
+      }
+      .thumb.active,
+      .thumb:hover {
+        opacity: 1;
+      }
+
     @media (max-width: 700px) {
       .bank { flex-direction: column; gap: 0.4rem; }
       .bank-name { min-width: unset; }
@@ -62,9 +102,18 @@
       <a href="https://robertheel.com/content/noisferatu/noisferatu_manual.pdf" class="btn" target="_blank" rel="noopener noreferrer">manual</a>
       <a href="https://robertheel.com/content/noisferatu/noisferatu_buildguide.pdf" class="btn" target="_blank" rel="noopener noreferrer">build guide</a>
       <a href="https://github.com/rob-scape/noisferatu" class="btn" target="_blank" rel="noopener noreferrer">github</a>
+      <a href="https://www.thonk.co.uk/shop/scaepe-noisferatu/" class="btn" target="_blank" rel="noopener noreferrer">DIY kit</a>
     </div>
 
-    <img class="instrument-photo" src="Noisferatu.webp" alt="Noisferatu">
+<div class="image-switcher">
+  <img class="switcher-main" id="switcher-main" src="noisferatu_3_01.webp" alt="Noisferatu">
+  <div class="switcher-thumbs">
+    <img src="noisferatu_3_01.webp" alt="Noisferatu" class="thumb active" onclick="switchImage(this)">
+    <img src="noisferatu_5_01.webp" alt="Noisferatu both panels" class="thumb" onclick="switchImage(this)">
+    <img src="noisferatu_3_02.webp" alt="Noisferatu outdoor" class="thumb" onclick="switchImage(this)">
+    <img src="noisferatu_3_03.webp" alt="Noisferatu outdoor" class="thumb" onclick="switchImage(this)">
+  </div>
+</div>
 
    <div class="description">
   <p>NOISFERATU is a compact handheld generative texture synthesizer. 45 algorithms across 5 banks produce crackling textures, noisy scapes, evolving drones, harmonic blips and digital chaos. Shaped but never fully controlled by four knobs.</p>
@@ -103,12 +152,21 @@
     </details>
   </div>
 
-    <div class="for-coders">
-  <a href="https://robertheel.com/content/noisferatu/noisferatu_manual.pdf" target="_blank">Manual</a><br><br>
-  <a href="https://robertheel.com/content/noisferatu/noisferatu_buildguide.pdf" target="_blank">Build guide</a><br><br>
-  <p>The <a href="https://github.com/rob-scape/noisferatu" target="_blank">GitHub repo</a> covers everything in depth.</p>
-</div>
 
+    <div class="for-coders">
+      <p>Buy <a href="https://www.thonk.co.uk/shop/scaepe-noisferatu/" target="_blank" rel="noopener noreferrer">DIY kit</a></p>
+      <p><a href="https://robertheel.com/content/noisferatu/noisferatu_manual.pdf" target="_blank" rel="noopener noreferrer">Manual</a></p>
+      <p><a href="https://robertheel.com/content/noisferatu/noisferatu_buildguide.pdf" target="_blank" rel="noopener noreferrer">Build guide</a></p>
+      <p>The <a href="https://github.com/rob-scape/noisferatu" target="_blank" rel="noopener noreferrer">GitHub repo</a> covers everything in depth.</p>
+    </div>
+
+    <div class="video-section">
+      <iframe 
+        src="https://www.youtube.com/embed/kAjsbi65Gq8?si=kVAXx-2DwePdY3O5&rel=0"
+        title="Noisferatu"
+        allowfullscreen>
+      </iframe>
+    </div>
 
   </main>
   <footer>
@@ -116,5 +174,14 @@
   </footer>
 
 </div>
+
+<script>
+function switchImage(thumb) {
+  document.getElementById('switcher-main').src = thumb.src;
+  document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+}
+</script>
+
 </body>
 </html>
